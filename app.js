@@ -347,7 +347,12 @@ function calcScore (){
     // Yahtzee
     if (diceFreq.indexOf(5) !== -1){
         // Yahtzee Bonus
-        (currentPlayer.selectedScores[11] && currentPlayer.eachScore[11] > 0)? currentPlayer.eachScore[11]+= 100 : newScoreArray[11] = 50;
+        if(currentPlayer.selectedScores[11] && currentPlayer.eachScore[11] > 0){
+            currentPlayer.eachScore[11]+= 100;
+            currentPlayer.scoreTotal+= 100;
+            currentPlayer.scoreDisplay[11].textContent = currentPlayer.eachScore[11];
+
+        } else newScoreArray[11] = 50;
     } else newScoreArray[11] = 0;
 
     //Chance
@@ -366,7 +371,7 @@ function updateScore(newScoreArray){
     for(let i=0;i<13;i++){
         if (!currentPlayer.selectedScores[i]){
             currentPlayer.eachScore[i] = newScoreArray[i];
-            currentPlayer.scoreDisplay[i].textContent = newScoreArray[i];
+            currentPlayer.scoreDisplay[i].textContent = currentPlayer.eachScore[i];
         }
     }
 }
