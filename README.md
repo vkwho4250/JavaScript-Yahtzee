@@ -10,10 +10,10 @@ View more images in **screenshots** folder.
 
 <img src="screenshots/desktop/1-title-sequence.png" alt="title-sequence" width="300"/>
 <img src="screenshots/desktop/2-select-players.png" alt="select-players" width="300"/>
-<img src="./screenshots/3-main-screen-p1.png" alt="main-screen-1" width="300"/>
-<img src="./screenshots/4-main-screen-p2.png" alt="main-screen-2" width="300"/>
-<img src="./screenshots/7-instructions.png" alt="instructions" width="300"/>
-<img src="./screenshots/8-about.png" alt="about" width="300"/>
+<img src="screenshots/desktop/3-main-screen-p1.png" alt="main-screen-1" width="300"/>
+<img src="screenshots/desktop/4-main-screen-p2.png" alt="main-screen-2" width="300"/>
+<img src="screenshots/desktop/7-instructions.png" alt="instructions" width="300"/>
+<img src="screenshots/desktop/8-about.png" alt="about" width="300"/>
 
 ---
 
