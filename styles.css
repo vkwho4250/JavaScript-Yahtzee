@@ -611,14 +611,15 @@ ul {
    padding: 1vw 0 0;
 }
 
-.dice-card > div {
+.dice-card div {
    position: absolute;
    width: 100%;
    height: 100%;
    border: 4rem solid white;
    border-radius: 10rem;
    overflow: hidden;
-   background: black;
+   background-color: black;
+   backface-visibility: hidden;
 }
 
 .dice-card.selected > div {
@@ -631,6 +632,10 @@ ul {
 
 .front {
    transform: rotateY(180deg);
+}
+
+.back {
+   transform: rotateY(0deg);
 }
 
 .back::before {
