@@ -34,8 +34,8 @@ const totalScoreElement = document.querySelectorAll(".total-score");
 
 // -- game elements for game operation
 // ---- udpates per roll
-let diceFreq = new Array(6).fill(0);
-let lockedIndices = new Array(5).fill(false); 
+let diceFreq = Array(6).fill(0);
+let lockedIndices = Array(5).fill(false); 
 let diceResults = [];  
 let rollCount = 1; // roll 1,2,3
 
@@ -55,17 +55,17 @@ let gameEnded = false; //turns true after 13 rounds
 setTimeout(() => {
    document.querySelector(".top-container").classList.add("intro-start");
     setTimeout(() => {
-        root.style.setProperty("--player-color","var(--neon-"+playerColor[0]+")");
+        root.style.setProperty("--player-color",`var(--neon-${playerColor[0]})`);
         setTimeout(() => {
-            root.style.setProperty("--player-color","var(--neon-"+playerColor[1]+")");
+            root.style.setProperty("--player-color",`var(--neon-${playerColor[1]})`);
             setTimeout(() => {
-                root.style.setProperty("--player-color","var(--neon-"+playerColor[2]+")");
+                root.style.setProperty("--player-color",`var(--neon-${playerColor[2]})`);
                 setTimeout(() => {
-                    root.style.setProperty("--player-color","var(--neon-"+playerColor[3]+")");
+                    root.style.setProperty("--player-color",`var(--neon-${playerColor[3]})`);
 
                     setTimeout(() => {
                         document.querySelector("#title-sequence").classList.add("exit");
-                        root.style.setProperty("--player-color","var(--neon-"+playerColor[0]+")");
+                        root.style.setProperty("--player-color",`var(--neon-${playerColor[0]})`);
                         playerNumElement.classList.add("enter");
                         menuContainer.classList.remove("no-display");
                     }, 1000);
@@ -94,7 +94,7 @@ playerNumOptions.forEach(el =>{
 
 function initialize (numOfPlayers){
 
-    //creates Player object for each player and adds to Player array collection
+    //creates Player object for each player and adds to player array
     for (let i=0;i<numOfPlayers;i++) playerArray.push(new Player(i+1,playerColor[i]));
 
     //assigns Player 1 as the player of the first turn
@@ -185,7 +185,7 @@ document.querySelector("#about-btn").addEventListener("click", ()=>{
 
 document.querySelector("#sound-btn").addEventListener("click",()=>{
     document.querySelector("#sound-btn i").classList.toggle("fa-volume-mute");
-        document.querySelector("#sound-btn i").classList.toggle("fa-volume-up");
+    document.querySelector("#sound-btn i").classList.toggle("fa-volume-up");
     soundOn = !soundOn;
 })
 
@@ -196,10 +196,10 @@ function Player(number, color) {
     this.number = number;
     this.color = color;
     this.scoreTotal = 0;
-    this.eachScore = new Array(13).fill(0);
-    this.scoreDisplay = document.querySelectorAll(".p"+number+" .point");
-    this.selectedScores = new Array(13).fill(false);
-    this.header = document.querySelectorAll("#scoreboard-headers .p"+number+" h4");
+    this.eachScore = Array(13).fill(0);
+    this.scoreDisplay = document.querySelectorAll(`.p${number} .point`);
+    this.selectedScores = Array(13).fill(false);
+    this.header = document.querySelectorAll(`#scoreboard-headers .p${number} h4`);
 }
 
 // Resets turn
@@ -233,7 +233,7 @@ function resetTurn (){
         backDisplay[1].textContent = playerNum;
         currentPlayer.scoreDisplay.forEach(el=> el.classList.add("active"));
         currentPlayer.header.forEach(el => el.classList.add("active"));
-        root.style.setProperty("--player-color","var(--neon-"+currentPlayer.color+")");
+        root.style.setProperty("--player-color",`var(--neon-${currentPlayer.color})`);
     }
 }
 
@@ -248,11 +248,10 @@ function gameOver(){
     const reducerSum6 = (acc, cur) => acc + cur;
 
     playerArray.forEach((player, idx) =>{
-        console.log("check bonus");
-        let upperScores = player.eachScore.slice(0,6);
+        const upperScores = player.eachScore.slice(0,6);
         if (upperScores.reduce(reducerSum6) >= 63){
             player.scoreTotal += 35;
-            document.querySelector(".p"+player.number+" .points-bonus").textContent = 35;
+            document.querySelector(`.p${player.number} .points-bonus`).textContent = 35;
             totalScoreElement[idx].textContent = player.scoreTotal;
         } 
     })
@@ -270,7 +269,7 @@ function gameOver(){
         })
     
         setTimeout(() => {
-            root.style.setProperty("--player-color","var(--neon-"+playerColor[winner-1]+")");
+            root.style.setProperty("--player-color",`var(--neon-${playerColor[winner-1]})`);
             backDisplay[0].textContent = "Player";
             backDisplay[1].textContent = winner+" wins";
         }, 500);
@@ -283,7 +282,7 @@ function randomDiceRoll (){
         if (!lockedIndices[i]){
             diceResults[i] = Math.ceil(Math.random()*6);
             diceIcons[i].classList.remove(diceIcons[i].classList[2])
-            diceIcons[i].classList.add("fa-dice-"+diceIconName[diceResults[i]]);
+            diceIcons[i].classList.add(`fa-dice-${diceIconName[diceResults[i]]}`);
         }
     }
 }
@@ -303,7 +302,7 @@ function countFreq(){
 
 //Calculates sum of the five dice results used for score calculations
 function sumOfResults() {
-    let reducerSumAll = (acc, cur, idx) => acc + cur*(idx+1);
+    const reducerSumAll = (acc, cur, idx) => acc + cur*(idx+1);
     return diceFreq.reduce(reducerSumAll);
 }
 
@@ -311,7 +310,7 @@ function sumOfResults() {
 function calcScore (){
 
     let newScoreArray =[];
-    let sumResults = sumOfResults();
+    const sumResults = sumOfResults();
 
     //Ones to Sixes
     for(let i=0;i<6;i++) newScoreArray[i] = (i+1)*diceFreq[i];  
