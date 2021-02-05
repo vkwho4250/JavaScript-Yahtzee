@@ -1,4 +1,4 @@
-# Yahtzee - Javascript
+# Yahtzee - First Project
 
 This project is intended to recreate the classic Yahtzee strategy game for up to 4 players with a simple 'night-mode' design.
 
@@ -23,20 +23,29 @@ View more images in **screenshots** folder.
 
 _Note that the descriptions below are available in game_
 
-To learn the rules of Yahtzee, visit [Dice Game Depot](https://www.dicegamedepot.com/yahtzee-rules/) for full details.
+To learn the rules of Yahtzee:
+
+-  visit the [Dice Game Depot](https://www.dicegamedepot.com/yahtzee-rules/) site
+-  watch [How to Play Yahtzee](https://www.youtube.com/watch?v=AHDgpuEzopc)
 
 To execute actions:
 
 -  To roll - click the circular Roll button
--  Set aside dice - click to toggle lock on individial dice cards. Locked dice are highlighted in green
+-  Set aside dice - click to toggle lock on individial dice cards. Locked dice are highlighted in green.
 -  Select score - non-highlighted scores on the scoreboard can be clicked to select. Highlighted scores are already selected and cannot be chosen again.
 -  Open menu - click the top semi-circle button to toggle menu which includes options for instructions, sound, and details about the game.
 
 ---
 
-## Motivation
+### The purpose of this project is to learn and gain practice with:
 
-After a month in, the purpose of this project is to use my newly learned
-developing skills on a practical application to test and better my current knowledge. It allowed me to set a goal, be creative and figure out what is needed to put it altogether. It also taught me equally (if not more) important concepts such as mass googling, debugging, commenting and cleaning code (oh, and patience **!important**)
+-  HTML, CSS, JavaScript
+-  Using Git and Github
+-  Set goals and create own project schedule
+-  Mass googling, debugging, commenting and clean code
 
-From this, I've gained practice on **HTML**, **CSS**, **JavaScript** and **Git** for version control.
+---
+
+### Built with:
+
+-  HTML, CSS, JavaScript
