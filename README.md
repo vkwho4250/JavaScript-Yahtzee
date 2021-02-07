@@ -2,7 +2,7 @@
 
 This project is intended to recreate the classic Yahtzee strategy game for up to 4 players with a simple 'night-mode' design.
 
-[Live Site](https://reverent-pasteur-30c395.netlify.app "Yahtzee Game - vkwho9ar")
+[Live Site](https://yahtzee-vkwho.netlify.app "Yahtzee Game - vkwho")
 
 ---
 
