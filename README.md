@@ -1,4 +1,4 @@
-# Yahtzee - First Project
+# Yahtzee
 
 This project is intended to recreate the classic Yahtzee strategy game for up to 4 players with a simple 'night-mode' design.
 
