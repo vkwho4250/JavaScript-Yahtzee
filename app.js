@@ -144,7 +144,7 @@ function initialize(numberOfPlayers) {
   interactBtn.addEventListener('click', () => {
     turnStarted = true;
     if (rollCount !== 4 && !gameEnded) {
-      rollCountElement.textContent = rollCount;
+      rollCountElement.textContent = `Roll ${rollCount}`;
 
       if (rollCount !== 1) displayDiceResults();
       if (soundOn) rollSound.play();
@@ -232,7 +232,7 @@ function resetTurn() {
     diceCards.forEach((el) => el.classList.remove('selected'));
     displayDiceResults();
     rollCount = 1;
-    rollCountElement.textContent = rollCount;
+    rollCountElement.textContent = `Roll ${rollCount}`;
 
     // remove current player indicators
     currentPlayer.selectedScores.forEach((el, index) => {
