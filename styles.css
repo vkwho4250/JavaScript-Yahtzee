@@ -37,10 +37,10 @@ html {
 body {
   width: 100vw;
   height: 100vh;
-  font-family: 'Barlow Condensed', sans-serif;
-  overflow: hidden;
+  font-family: "Barlow Condensed", sans-serif;
   color: rgb(255, 255, 255);
   background: rgb(0, 0, 0);
+  overflow: hidden;
 }
 
 h1 {
@@ -238,6 +238,7 @@ i {
   position: absolute;
   height: 70vh;
   overflow-y: auto;
+  overflow-x: hidden;
   text-align: center;
   padding: 10rem;
   bottom: 25%;
@@ -377,7 +378,7 @@ ul {
 /* Menu animations */
 
 #menu-container.open1 {
-  transform: translateY(-88%);
+  transform: translateY(-85%);
 }
 
 #menu-container.open2 {
@@ -405,9 +406,9 @@ ul {
 
 .background {
   position: absolute;
-  width: 60%;
   top: 30%;
-  left: 5vh;
+  padding-left: 5vh;
+  width: 100vw;
   opacity: 0.5;
   color: var(--player-color);
 }
@@ -634,7 +635,7 @@ ul {
 }
 
 .back::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 5;
   top: 0;
@@ -679,7 +680,7 @@ ul {
 }
 
 .circle-container::before {
-  content: '';
+  content: "";
   position: absolute;
   z-index: 4;
   width: 100%;
@@ -747,6 +748,7 @@ ul {
 
   body {
     overflow-y: auto;
+    overflow-x: hidden;
   }
 
   .background {
