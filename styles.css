@@ -31,7 +31,7 @@
 }
 
 html {
-  font-size: 6.25%;
+  font-size: 1px;
 }
 
 body {
@@ -615,6 +615,7 @@ ul {
   border-radius: 10rem;
   overflow: hidden;
   background-color: black;
+  -webkit-backface-visibility: hidden;
   backface-visibility: hidden;
 }
 
